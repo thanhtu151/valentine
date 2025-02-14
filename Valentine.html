@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise for You</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: linear-gradient(to bottom right, #8ecae6, #219ebc);
+      color: #fff;
+    }
+    input {
+      font-size: 16px;
+      padding: 10px;
+      border: 2px solid #023047;
+      border-radius: 5px;
+      margin: 10px 0;
+      width: 60%;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #ffb703;
+      color: #023047;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #fb8500;
+    }
+    .flower {
+      position: absolute;
+      width: 100px;
+    }
+    .flower1 { top: 20px; left: 10px; }
+    .flower2 { bottom: 20px; right: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Đoán xem ai sắp được quà nè! 🎁</h1>
+  <p>Nhập đúng tên, em sẽ nhận được món quà đặc biệt. Sai thì… làm lại thôi chứ sao! 😜</p>
+  
+  <input type="text" id="nameInput" placeholder="Nhập tên của em..." />
+  <button onclick="checkName()">Vào ngay</button>
+
+  <p id="message" style="color: #ffcccb; font-weight: bold;"></p>
+
+  <script>
+    function checkName() {
+      const name = document.getElementById("nameInput").value.trim();
+      if (name.toLowerCase() === "huỳnh nga") {
+        window.location.href = "Valuntun.html";
+      } else {
+        document.getElementById("message").innerText = "Sai ròi nè! Thử lại hoii!";
+      }
+    }
+  </script>
+</body>
+</html>
