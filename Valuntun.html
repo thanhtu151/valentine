@@ -11,17 +11,74 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Valentine</title>
+    <style>
+      .signature {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #ff4d4d;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .video-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+      .video-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1001;
+      }
+      .video-popup iframe {
+        width: 560px;
+        height: 315px;
+      }
+    </style>
   </head>
   <body>
     <main class="container">
       <img class="cat-img" src="img/cat-0.jpg" alt="Picture of a cat" />
-      <p class="title"> Will you be my Valentine?</p>
+      <p class="title">Will you be my Valentine?</p>
       <div class="buttons">
         <button type="button" class="btn btn--yes">Yes</button>
         <button type="button" class="btn btn--no">No</button>
       </div>
     </main>
-    <div class="signature">Nguyen Thanh Tu</div>
+    
+    <!-- Chữ ký để bấm vào mở video -->
+    <div class="signature" onclick="showVideo()">Nguyen Thanh Tu</div>
+
+    <!-- Video Popup -->
+    <div class="video-overlay" onclick="hideVideo()"></div>
+    <div class="video-popup" id="videoContainer">
+      <iframe id="videoFrame" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
     <script type="module" src="script.js"></script>
+    <script>
+      function showVideo() {
+        document.querySelector(".video-overlay").style.display = "block";
+        document.querySelector(".video-popup").style.display = "block";
+      }
+
+      function hideVideo() {
+        document.querySelector(".video-overlay").style.display = "none";
+        document.querySelector(".video-popup").style.display = "none";
+      }
+    </script>
   </body>
 </html>
