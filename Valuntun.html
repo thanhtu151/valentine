@@ -60,7 +60,21 @@
     </main>
     
     <!-- Chữ ký để bấm vào mở video -->
-    <div class="signature" onclick="showVideo()">Nguyen Thanh Tu</div>
+    <div class="signature" onclick="playVideo()">Nguyen Thanh Tu</div>
+
+<!-- Video ẩn ban đầu -->
+<video id="myVideo" style="display: none; width: 100%; max-width: 600px;" controls>
+  <source src="img/6322223147393.mp4" type="video/mp4">
+  Trình duyệt của bạn không hỗ trợ phát video.
+</video>
+
+<script>
+  function playVideo() {
+    document.getElementById("myVideo").style.display = "block";
+    document.getElementById("myVideo").play();
+  }
+</script>
+
 
     <!-- Video Popup -->
     <div class="video-overlay" onclick="hideVideo()"></div>
